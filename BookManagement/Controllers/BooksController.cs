@@ -38,5 +38,12 @@ namespace BookManagement.Controllers
 
             return Ok(getBooksResponse);
         }
+
+        [HttpGet("id")]
+        public async Task<IActionResult> BookById(int id)
+        {
+            var get = _bookManagement.GetBookById(id);
+            return Ok(get);
+        }
     }
 }
